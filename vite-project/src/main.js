@@ -41,7 +41,7 @@ const songs = [
   { title: "Uptown Funk", artist: "Mark Ronson ft. Bruno Mars" },
 ];
 
-function inject(item) {
+/* function inject(item) {
   container = document.querySelector("#app");
   container.insertAdjacentHTML(
     "Afterbegin",
@@ -53,7 +53,12 @@ function inject(item) {
 }
 songs.forEach((element) => {
   inject(element);
-});
+}); */
+function inject() {
+  container = document.querySelector("#app");
+  container.insertAdjacentHTML("Afterbegin", `<h1>Hi</h1>`);
+}
+inject();
 /* document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
