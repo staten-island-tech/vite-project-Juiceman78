@@ -54,11 +54,15 @@ const songs = [
 songs.forEach((element) => {
   inject(element);
 }); */
-function inject() {
-  container = document.querySelector("#app");
-  container.insertAdjacentHTML("Afterbegin", `<h1>Hi</h1>`);
+
+function inject(songs) {
+  songs.forEach((song) => {
+    container = document.querySelector("#app");
+    container.insertAdjacentHTML("Afterbegin", `<h1>${song.title}</h1>`);
+  });
 }
-inject();
+inject(songs);
+
 /* document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
