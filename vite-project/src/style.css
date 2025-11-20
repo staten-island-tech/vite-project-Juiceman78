@@ -1,4 +1,7 @@
 :root {
-  --primary-color: #000000;
-  --secondary-color: #4d4e4f;
+  --primary-color: #fbfafb;
+  --secondary-color: #1e3900;
+}
+.songs {
+  background-color: var(--secondary-color);
 }
