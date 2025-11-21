@@ -43,7 +43,7 @@ function inject(songs) {
     container = document.querySelector("#app");
     container.insertAdjacentHTML(
       "Afterbegin",
-      `<div class = "songs"><h1>${song.title}</h1><h1>${song.artist}</h1></div>`
+      `<div class = "songs"><h1 class="song">${song.title}</h1><h1 class="song">${song.artist}</h1></div>`
     );
   });
 }

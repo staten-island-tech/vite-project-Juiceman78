@@ -4,4 +4,8 @@
 }
 .songs {
   background-color: var(--secondary-color);
+  text-align: center;
+}
+.song {
+  color: var(--primary-color);
 }
