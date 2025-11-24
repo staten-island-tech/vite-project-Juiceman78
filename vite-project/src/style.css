@@ -1,6 +1,11 @@
 :root {
   --primary-color: #fbfafb;
-  --secondary-color: #1e3900;
+  --secondary-color: #9ac2c7;
+  --tertiary-color: #d0233d;
+
+  --dprimary-color: #2c2e30;
+  --dsecondary-color: #dfecc1;
+  --dtertiary-color: #a8aaa9;
 }
 .songs {
   background-color: var(--secondary-color);
@@ -8,4 +13,8 @@
 }
 .song {
   color: var(--primary-color);
+}
+.mode {
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
 }
