@@ -1,20 +1,69 @@
 :root {
-  --primary-color: #fbfafb;
-  --secondary-color: #9ac2c7;
-  --tertiary-color: #d0233d;
+  /* Base Color Definitions */
+  --royalblue: #2a66ff;
+  --softgold: #f2c94c;
+  --coral: #ff6f61;
 
-  --dprimary-color: #2c2e30;
-  --dsecondary-color: #dfecc1;
-  --dtertiary-color: #a8aaa9;
+  --cyan: #32e8ff;
+  --magenta: #ff4ef0;
+  --yellow: #ffe84a;
+
+  /* Defaults (light mode fallback) */
+  --primary: var(--royalblue);
+  --secondary: var(--softgold);
+  --tertiary: var(--coral);
+
+  --bg: white;
+  --text: black;
 }
+
+.light {
+  --primary: var(--royalblue);
+  --secondary: var(--softgold);
+  --tertiary: var(--coral);
+
+  --bg: white;
+  --text: black;
+}
+
+.dark {
+  --primary: var(--cyan);
+  --secondary: var(--magenta);
+  --tertiary: var(--yellow);
+
+  --bg: #000000;
+  --text: var(--primary);
+}
+
+/* ---------- Global Theme Styles ---------- */
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* ---------- Component Styling ---------- */
+
 .songs {
-  background-color: var(--secondary-color);
+  background-color: var(--primary);
+  color: white;
   text-align: center;
+  padding: 20px;
 }
+
 .song {
-  color: var(--primary-color);
+  color: var(--tertiary);
+  font-weight: bold;
 }
+
 .mode {
-  color: var(--tertiary-color);
-  background-color: var(--secondary-color);
+  color: var(--primary);
+  background-color: var(--secondary);
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }
