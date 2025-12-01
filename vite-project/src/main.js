@@ -225,12 +225,16 @@ function inject(songs) {
     container = document.querySelector("#app");
     container.insertAdjacentHTML(
       "Afterbegin",
-      `<div class = "songs"><div class="song">
-      ${song.name}
-      ${song.length}
-      ${song.artist}
-      ${song.album}
-      </div></div>`
+      `<div class = "songs">
+      <div class="song">
+      ${song.name}</div>
+      <div class="song">
+      ${song.length}</div>
+      <div class="song">
+      ${song.artist}</div>
+      <div class="song">
+      ${song.album}</div>
+      </div>`
     );
   });
 }
@@ -245,8 +249,28 @@ document.querySelector(".mode").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
-
-/* document.querySelector(".filter").addEventListener("input", function () {
-  
+let inputValue = null;
+function getValue() {
+  inputValue = document.getElementById("inject").value;
+  console.log(inputValue);
+  container = document.querySelector("#app");
+  container.insertAdjacentHTML(
+    "Afterbegin",
+    `<div class = "songs">
+      <div class="song">
+      ${inputValue}</div>
+      </div>`
+  );
+}
+document.querySelector(".search").addEventListener("click", function () {
+  getValue();
 });
- */
+let imginput = null;
+function addImage() {
+  let imginput = document.getElementById("imginput").value;
+  container = document.querySelector("#app");
+  container.insertAdjacentHTML(
+    "Afterbegin",
+    `<img src = "${imginput} alt="newimage">`
+  );
+}
