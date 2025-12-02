@@ -219,10 +219,9 @@ const songs = [
   },
 ];
 
-let container = null;
+const container = document.getElementById("app");
 function inject(songs) {
   songs.forEach((song) => {
-    container = document.querySelector("#app");
     container.insertAdjacentHTML(
       "Afterbegin",
       `<div class = "songs">
@@ -253,7 +252,6 @@ let inputValue = null;
 function getValue() {
   inputValue = document.getElementById("inject").value;
   console.log(inputValue);
-  container = document.querySelector("#app");
   container.insertAdjacentHTML(
     "Afterbegin",
     `<div class = "songs">
@@ -265,12 +263,15 @@ function getValue() {
 document.querySelector(".search").addEventListener("click", function () {
   getValue();
 });
-let imginput = null;
+
 function addImage() {
   let imginput = document.getElementById("imginput").value;
-  container = document.querySelector("#app");
+
   container.insertAdjacentHTML(
     "Afterbegin",
-    `<img src = "${imginput} alt="newimage">`
+    `<img src = "${imginput}" alt="newimage">`
   );
 }
+document.querySelector(".imgbutton").addEventListener("click", function () {
+  addImage();
+});
