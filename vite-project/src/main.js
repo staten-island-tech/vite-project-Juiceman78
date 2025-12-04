@@ -248,15 +248,22 @@ document.querySelector(".mode").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
-let inputValue = null;
+let inputSong = null;
+let inputLength = null;
+let inputAlbum = null;
+let inputArtist = null;
 function getValue() {
-  inputValue = document.getElementById("inject").value;
-  console.log(inputValue);
+  inputSong = document.getElementById("song").value;
+  inputLength = document.getElementById("length").value;
+  inputArtist = document.getElementById("artist").value;
+  inputAlbum = document.getElementById("album").value;
   container.insertAdjacentHTML(
     "Afterbegin",
     `<div class = "songs">
-      <div class="song">
-      ${inputValue}</div>
+      <div class="song"> ${inputSong}</div>
+      <div class="song"> ${inputLength}</div>
+      <div class="song"> ${inputArtist}</div>
+      <div class="song"> ${inputAlbum}</div>
       </div>`
   );
 }

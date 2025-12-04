@@ -37,17 +37,32 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
-
 .songs {
-  background-color: var(--primary);
-  color: white;
-}
-
-.song {
   background-color: var(--bg);
   color: var(--text);
-  border: 2px solid var(--secondary);
+  border: 3px solid var(--primary);
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden; /* keeps dividers clean */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+/* Each song section */
+.song {
+  padding: 18px 20px;
+  background-color: var(--bg);
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* Remove divider after last song */
+.song:last-child {
+  border-bottom: none;
+}
+.song:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
 .mode {
   color: var(--bg);
   background-color: var(--secondary);
