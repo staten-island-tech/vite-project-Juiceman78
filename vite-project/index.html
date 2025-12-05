@@ -12,9 +12,16 @@
     <input id="length" placeholder="Insert: Length" />
     <input id="artist" placeholder="Insert: Artist" />
     <input id="album" placeholder="Insert: Album" />
-    <button class="search">Insert Song</button>
     <input id="imginput" placeholder="Insert: Img link" />
-    <button class="imgbutton">Insert Image</button>
+    <button class="search">Insert Song</button>
+    <select id="album-filter" onchange="applyFilter()">
+      <option value="all">All Albums</option>
+      <option value="Frank">Frank Ocean</option>
+      <option value="Don">Don Toliver</option>
+      <option value="Tame">Tame Impala</option>
+    </select>
+
+    <div id="song-list"></div>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
