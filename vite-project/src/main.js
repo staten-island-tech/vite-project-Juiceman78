@@ -291,11 +291,10 @@ const songs = [
 ];
 
 const container = document.getElementById("app");
-function inject(songs) {
-  songs.forEach((song) => {
-    container.insertAdjacentHTML(
-      "Afterbegin",
-      `<div class = "songs">
+function inject(song) {
+  container.insertAdjacentHTML(
+    "Afterbegin",
+    `<div class = "songs">
       <div class="song">
       ${song.name}</div>
       <div class="song">
@@ -307,10 +306,9 @@ function inject(songs) {
       <div class="song">
       <img class="img" src ="${song.image}"></div>
       </div>`
-    );
-  });
+  );
 }
-inject(songs);
+songs.forEach((song) => inject(song));
 
 document.querySelector(".mode").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -349,11 +347,25 @@ document.querySelector(".search").addEventListener("click", function () {
 });
 
 function applyFilter() {
-  const value = document.getElementById("album-filter").value;
-
+  let value = document.getElementById("album-filter").value;
   if (value === "all") {
+    container.innerHTML = "";
     inject(songs);
   } else {
-    inject(songs.filter((song) => song.album === value));
+    container.innerHTML = "";
+    songs.forEach((song) => {
+      if (song["artist"] === "Frank Ocean") {
+        inject(song);
+      }
+      else if (song["artist"] === "Tame Impala") {
+        inject(song);
+      }
+      else(song["artist"] === "Don Toliver") {
+        inject(song);
+      };
+    });
   }
 }
+document.querySelector("#album-filter").addEventListener("change", function () {
+  applyFilter();
+});
