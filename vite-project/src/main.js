@@ -1,5 +1,6 @@
 import "./style.css";
 
+let playlist = [];
 const songs = [
   {
     name: "Self Control",
@@ -291,7 +292,7 @@ const songs = [
 ];
 
 const container = document.getElementById("app");
-function inject(song) {
+function inject(song, container) {
   container.insertAdjacentHTML(
     "Afterbegin",
     `<div class = "songs">
@@ -305,10 +306,11 @@ function inject(song) {
       ${song.album}</div>
       <div class="song">
       <img class="img" src ="${song.image}"></div>
+      <button class ="add" id = "${song.name}"> Add to playlist </button>
       </div>`
   );
 }
-songs.forEach((song) => inject(song));
+songs.forEach((song) => inject(song, container));
 
 document.querySelector(".mode").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
@@ -339,6 +341,7 @@ function getValue() {
       <div class="song"> ${inputAlbum}</div>
       <div class="song">
       <img class = "img" src ="${imginput}"></div>
+      <button class ="insert" id = "${song.name}"> Add to playlist </button>
       </div>`
   );
 }
@@ -350,22 +353,25 @@ function applyFilter() {
   let value = document.getElementById("album-filter").value;
   if (value === "all") {
     container.innerHTML = "";
-    inject(songs);
+    songs.forEach((song) => inject(song));
   } else {
     container.innerHTML = "";
     songs.forEach((song) => {
-      if (song["artist"] === "Frank Ocean") {
+      if (song["artist"] === value) {
         inject(song);
       }
-      else if (song["artist"] === "Tame Impala") {
-        inject(song);
-      }
-      else(song["artist"] === "Don Toliver") {
-        inject(song);
-      };
     });
   }
 }
 document.querySelector("#album-filter").addEventListener("change", function () {
   applyFilter();
+});
+
+function addPlaylist() {
+  playlist = document.querySelector("#playlist");
+  inject(song, playlist);
+}
+
+document.querySelector("#insert").addEventListener("click", function () {
+  addPlaylist();
 });
