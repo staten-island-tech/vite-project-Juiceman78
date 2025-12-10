@@ -276,13 +276,6 @@ const songs = [
     image: "Blonde.png",
   },
   {
-    name: "Alter Ego",
-    artist: "Tame Impala",
-    length: "4:47",
-    album: "Innerspeaker",
-    image: "Innerspeaker.png",
-  },
-  {
     name: "The Less I Know the Better",
     artist: "Tame Impala",
     length: "3:36",
@@ -292,7 +285,7 @@ const songs = [
 ];
 
 const container = document.getElementById("app");
-function inject(song, container) {
+function inject(song) {
   container.insertAdjacentHTML(
     "Afterbegin",
     `<div class = "songs">
@@ -368,8 +361,7 @@ document.querySelector("#album-filter").addEventListener("change", function () {
 });
 
 function addPlaylist() {
-  playlist = document.querySelector("#playlist");
-  inject(song, playlist);
+  inject(song);
 }
 
 document.querySelector("#insert").addEventListener("click", function () {
